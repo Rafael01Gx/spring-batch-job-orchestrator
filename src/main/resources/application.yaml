@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: tickets
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tickets
+    username: postgres
+    password: postgres
+
+  batch:
+    jdbc:
+      initialize-schema: aways
