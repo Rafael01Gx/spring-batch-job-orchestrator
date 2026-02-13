@@ -7,9 +7,11 @@ spring:
     username: postgres
     password: postgres
 
-  jpa:
-    hibernate:
-      ddl-auto: update
+  flyway:
+    enabled: false
+    baseline-on-migrate: false
+    locations:
+      - db/migrations
 
   batch:
     jdbc:
