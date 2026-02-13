@@ -3,9 +3,18 @@ spring:
     name: tickets
   datasource:
     url: jdbc:postgresql://localhost:5432/tickets
+    jdbcUrl: jdbc:postgresql://localhost:5432/tickets
     username: postgres
     password: postgres
 
+  jpa:
+    hibernate:
+      ddl-auto: update
+
   batch:
     jdbc:
-      initialize-schema: aways
+      initialize-schema: always
+
+logging:
+  level:
+    org.springframework.batch: DEBUG
