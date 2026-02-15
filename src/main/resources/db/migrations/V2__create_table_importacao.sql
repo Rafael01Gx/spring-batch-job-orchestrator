@@ -7,5 +7,6 @@ CREATE TABLE importacao (
     data DATE NOT NULL,
     tipo_ingresso VARCHAR(100) NOT NULL,
     valor NUMERIC(10,2) NOT NULL,
-    hora_importacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    hora_importacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    taxa_admin NUMERIC(10,2) NOT NULL DEFAULT 0
 );

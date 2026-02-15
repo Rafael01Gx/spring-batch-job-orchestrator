@@ -1,22 +1,36 @@
 spring:
   application:
     name: tickets
+
   datasource:
     url: jdbc:postgresql://localhost:5432/tickets
-    jdbcUrl: jdbc:postgresql://localhost:5432/tickets
     username: postgres
     password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
 
   flyway:
-    enabled: false
-    baseline-on-migrate: false
+    enabled: true
+    baseline-on-migrate: true
     locations:
       - db/migrations
 
   batch:
     jdbc:
-      initialize-schema: always
+      initialize-schema: never
+      platform: postgresql
+      table-prefix: BATCH_
+    job:
+      enabled: false
 
 logging:
   level:
     org.springframework.batch: DEBUG
+    org.springframework.jdbc.core: DEBUG

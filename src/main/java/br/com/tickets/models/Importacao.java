@@ -2,6 +2,7 @@ package br.com.tickets.models;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -19,6 +20,17 @@ public class Importacao {
     private String tipoIngresso;
     private Double valor;
     private LocalDateTime horaImportacao;
+    private BigDecimal taxaAdmin;
+
+    public BigDecimal getTaxaAdmin() {
+        return taxaAdmin;
+    }
+
+    public void setTaxaAdmin(BigDecimal taxaAdmin) {
+        this.taxaAdmin = taxaAdmin;
+    }
+
+
 
     public Long getId() {
         return id;
